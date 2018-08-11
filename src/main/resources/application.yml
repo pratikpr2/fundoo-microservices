@@ -12,7 +12,7 @@ eureka:
 zuul:
   routes:
     user:
-      path: /user/**
+      path: /users/**
       service-id: user-microservice
         
     note:
@@ -25,4 +25,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 3600000 
+            timeoutInMilliseconds: 360000 
+
+
+  
