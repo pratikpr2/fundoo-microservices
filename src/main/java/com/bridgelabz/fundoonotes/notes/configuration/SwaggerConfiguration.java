@@ -1,4 +1,4 @@
-package com.bridgelabz.fundoonotes.notes.configuration;
+/*package com.bridgelabz.fundoonotes.notes.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,4 +41,4 @@ public class SwaggerConfiguration {
 		return new SecurityConfiguration(null, null, null,null, "token",ApiKeyVehicle.HEADER,"token","");
 	}
 	
-}
+}*/

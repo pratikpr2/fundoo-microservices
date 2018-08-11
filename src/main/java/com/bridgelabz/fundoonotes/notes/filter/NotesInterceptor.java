@@ -1,4 +1,4 @@
-package com.bridgelabz.fundoonotes.notes.filter;
+/*package com.bridgelabz.fundoonotes.notes.filter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,8 +13,8 @@ import com.bridgelabz.fundoonotes.notes.token.JwtToken;
 @Component
 public class NotesInterceptor implements HandlerInterceptor {
 
-	/*@Autowired
-	UserRepository repo;*/
+	@Autowired
+	UserRepository repo;
 	
 	@Autowired
 	JwtToken jwt;
@@ -27,11 +27,11 @@ public class NotesInterceptor implements HandlerInterceptor {
 		
 		if(userId!=null) {
 			
-			request.setAttribute("userId",jwt.getUserId(token));
+			request.setAttribute("userId",userId);
 			return true;
 			
 		}
 		return false;
 	}
 	
-}
+}*/

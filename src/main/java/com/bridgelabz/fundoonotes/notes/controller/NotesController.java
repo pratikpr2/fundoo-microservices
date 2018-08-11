@@ -31,7 +31,6 @@ import com.bridgelabz.fundoonotes.notes.model.ViewNoteDto;
 import com.bridgelabz.fundoonotes.notes.services.NotesService;
 
 @RestController
-@RequestMapping("/api/notes")
 public class NotesController {
 
 	@Autowired
@@ -72,8 +71,9 @@ public class NotesController {
 	@RequestMapping(value="/openAll",method = RequestMethod.GET)
 	public ResponseEntity<List<ViewNoteDto>> openNotes(HttpServletRequest req) throws TokenParsingException, NoteNotFoundException{
 		
-		String userId = (String)req.getAttribute("userId");
-
+		String userId = req.getHeader("userId");
+		
+		System.out.println(userId);
 		List<ViewNoteDto> notes = notesService.openAllNotes(userId);
 		
 		return new ResponseEntity<List<ViewNoteDto>>(notes,HttpStatus.OK);
