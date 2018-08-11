@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
 	JwtToken jwt;
 	
 	@Override
-	public void login(LoginDTO logUser) throws LoginException {
+	public String login(LoginDTO logUser) throws LoginException {
 
 		Utility.validateLoginUser(logUser);
 		
@@ -90,6 +90,8 @@ public class UserServiceImpl implements UserService {
 		mailuser.setBody(loginLink);
 		
 		producer.send(mailuser);
+		
+		return token;
 	}
 
 	@Override

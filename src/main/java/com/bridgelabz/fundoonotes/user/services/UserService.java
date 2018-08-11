@@ -15,7 +15,7 @@ import com.bridgelabz.fundoonotes.user.model.RegistrationDTO;
 
 public interface UserService {
 
-	public void login(LoginDTO logUser) throws LoginException;
+	public String login(LoginDTO logUser) throws LoginException;
 
 	public void register(RegistrationDTO regUser) throws RegistrationException, MessagingException;
 

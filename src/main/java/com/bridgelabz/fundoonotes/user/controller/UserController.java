@@ -42,7 +42,9 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<ResponseDto> login(@RequestBody LoginDTO loginDto,HttpServletResponse res) throws LoginException {
 
-		userService.login(loginDto);
+		String token = userService.login(loginDto);
+		
+		res.setHeader("token", token);
 		
 		ResponseDto response = new ResponseDto();
 		response.setMessage("SuccessFully LoggedIn");
